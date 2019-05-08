@@ -1,4 +1,4 @@
-package src.main.java.com.qn.furnitue.service.imp;
+package com.qn.furnitue.service.imp;
 
 import com.qn.furnitue.mapper.ClientMapper;
 import com.qn.furnitue.model.Client;

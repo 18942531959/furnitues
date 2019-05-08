@@ -1,9 +1,9 @@
-package src.main.java.com.qn.furnitue.service.imp;
+package com.qn.furnitue.service.imp;
 
 import com.qn.furnitue.mapper.OrdersMapper;
 import com.qn.furnitue.model.Orders;
-import com.qn.furnitue.service.IOrdersService;
-import com.qn.furnitue.util.PageBean;
+import src.main.java.com.qn.furnitue.service.IOrdersService;
+import src.main.java.com.qn.furnitue.util.PageBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

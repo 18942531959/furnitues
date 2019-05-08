@@ -1,4 +1,4 @@
-package src.main.java.com.qn.furnitue.util;
+package com.qn.furnitue.util;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;

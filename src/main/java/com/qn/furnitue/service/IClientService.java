@@ -1,7 +1,6 @@
-package src.main.java.com.qn.furnitue.service;
+package com.qn.furnitue.service;
 
 import com.qn.furnitue.model.Client;
-import org.springframework.stereotype.Repository;
 
 public interface IClientService {
 

@@ -1,4 +1,4 @@
-package src.main.java.com.qn.furnitue.util;
+package com.qn.furnitue.util;
 
 import java.io.Serializable;
 import java.util.Map;

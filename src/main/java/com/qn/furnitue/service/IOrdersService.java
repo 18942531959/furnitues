@@ -1,4 +1,4 @@
-package src.main.java.com.qn.furnitue.service;
+package com.qn.furnitue.service;
 
 import com.qn.furnitue.model.Orders;
 import com.qn.furnitue.util.PageBean;

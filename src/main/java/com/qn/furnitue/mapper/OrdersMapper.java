@@ -1,4 +1,4 @@
-package src.main.java.com.qn.furnitue.mapper;
+package com.qn.furnitue.mapper;
 
 import com.qn.furnitue.model.Orders;
 import org.springframework.stereotype.Repository;

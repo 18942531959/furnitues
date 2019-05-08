@@ -1,4 +1,4 @@
-package src.main.java.com.qn.furnitue.controller;
+package com.qn.furnitue.controller;
 
 import com.qn.furnitue.model.Client;
 import com.qn.furnitue.model.Orders;

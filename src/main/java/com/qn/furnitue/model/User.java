@@ -1,4 +1,4 @@
-package src.main.java.com.qn.furnitue.model;
+package com.qn.furnitue.model;
 
 import lombok.ToString;
 
