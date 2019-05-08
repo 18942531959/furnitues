@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.qn.furnitue.mapper.ClientMapper" >
+  <resultMap id="BaseResultMap" type="com.qn.furnitue.model.Client" >
+    <constructor >
+      <idArg column="cid" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="coid" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="cname" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="cphone" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="caddress" jdbcType="VARCHAR" javaType="java.lang.String" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    cid, coid, cname, cphone, caddress
+  </sql>
+  <insert id="insertClient" parameterType="com.qn.furnitue.model.Client" >
+    insert into client (cid, coid, cname,
+      cphone, caddress)
+    values (#{cid,jdbcType=INTEGER}, #{coid,jdbcType=VARCHAR}, #{cname,jdbcType=VARCHAR},
+      #{cphone,jdbcType=VARCHAR}, #{caddress,jdbcType=VARCHAR})
+  </insert>
+</mapper>
