@@ -1,4 +1,4 @@
-package src.main.java.com.qn.furnitue.controller;
+package com.qn.furnitue.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -98,4 +98,25 @@ public class indexController {
         return "order/query-order";
     }
 
+    /**
+     * 手机验证码登录
+     * @param session
+     * @return
+     */
+    @RequestMapping("/home/forgetPwd")
+    public String tofindforgetPwd(HttpSession session){
+        session.setAttribute(SessionLocaleResolver.LOCALE_SESSION_ATTRIBUTE_NAME, Locale.CHINA);
+        return "producer/produre-forgetPwd";
+    }
+
+/**
+ * 登录
+ * @param session
+ * @return
+ */
+    @RequestMapping("/home/loginagain")
+    public String tologin(HttpSession session){
+        session.setAttribute(SessionLocaleResolver.LOCALE_SESSION_ATTRIBUTE_NAME, Locale.CHINA);
+        return "/login.jsp";
+    }
 }

@@ -103,6 +103,7 @@
 
         .ui-dialog-submit:hover {
 
+
             background: #3f81b0;
 
         }
@@ -154,20 +155,21 @@
                             <font face="楷体" style="font-size: 24px;"> 家具通</font>&nbsp;&nbsp;云端智能设计/拆单系统
                         </div>
                         <div class="ui-dialog-content">
-                            <div class="ui-dialog-l40 ui-dialog-pt15" style="margin-top: 400px;margin-left: 110px">
+                            <div class="ui-dialog-l40 ui-dialog-pt15" style="margin-top: 350px;margin-left: 110px">
                                 <input class="ui-dialog-input ui-dialog-input-username" style="margin-right: 120px" type="input"  placeholder="手机/邮箱/用户名" />
                             </div>
                             <div class="ui-dialog-l40 ui-dialog-pt15" style="margin-left: 110px">
                                 <input class="ui-dialog-input ui-dialog-input-password" type="password" placeholder="密码" />
                             </div>
                             <div class="ui-dialog-l40 ui-dialog-pt15" style="margin-left: 110px">
-                                <input class="ui-dialog-input ui-dialog-input-password" type="password" placeholder="确认密码" />
+                                <input class="ui-dialog-input ui-dialog-input-rpassword" type="password" placeholder="确认密码" />
                             </div>
                             <div class="ui-dialog-l40 ui-dialog-pt15" style="margin-top: 400px;margin-left: 110px">
-                                <input class="ui-dialog-input ui-dialog-input-username" style="margin-right: 120px;margin-top: 300px" type="input"  placeholder="验证码" />
+                                <input class="ui-dialog-input ui-dialog-input-code" style="margin-right: 120px;margin-top: -380px" type="input"  placeholder="验证码" />
+                                <a class="ui-dialog-submit" style="margin-top: -340px;size: 30px;width: 150px;margin-left: 180px" href="${ctx}/home/index">获取验证码</a>
                             </div>
                             <div>
-                                <a class="ui-dialog-submit" style="margin-top: 40px;size: 90px;width: 250px;margin-left: 180px" href="${ctx}/home/index">注册</a>
+                                <a class="ui-dialog-submit" style="margin-top: -300px;size: 90px;width: 250px;margin-left: 180px" href="${ctx}/home/index">注册</a>
                             </div>
                             <br>
                         </div>

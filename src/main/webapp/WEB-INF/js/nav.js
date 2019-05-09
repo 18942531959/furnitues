@@ -14,7 +14,7 @@ var navs = [
 			{
 				"title": "订单查询",
 				"icon": "&#xe631;",
-				"href": "home/queryorder",
+				"href": "",
 				"spread": false
 			}]
 	},

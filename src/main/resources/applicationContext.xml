@@ -17,5 +17,5 @@
         </property>
     </bean>
 
-    <import resource="classpath:applicationContext-mybatis.xml"/>
+    <import resource="applicationContext-mybatis.xml"/>
 </beans>
