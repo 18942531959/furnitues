@@ -7,7 +7,6 @@
     <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="${ctx}/page/layui/css/layui.css" media="all" />
     <link href="${ctx}/css/all1.css" rel="stylesheet" type="text/css">
-    <script type="text/javascript" src="${ctx}/js/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="${ctx}/page/layui/layui.js"></script>
     <script type="text/javascript" src="${ctx}/js/order/query-order.js"></script>
 </head>
@@ -27,7 +26,7 @@
 
             <label class="layui-form-label">经销商:</label>
             <div class="layui-input-inline">
-                <input type="text" name="odealer" id="odealer" lay-verify="required" placeholder="请输入客户名称" autocomplete="off" class="layui-input">
+                <input type="text" name="odealer" id="odealer" lay-verify="required" placeholder="请输入经销商名称" autocomplete="off" class="layui-input">
             </div>
             <div class="layui-input-inline">
                 <button class="layui-btn layui-btn-warm" id="orderquery"> 查询</button>&nbsp;

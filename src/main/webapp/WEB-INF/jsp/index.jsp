@@ -12,16 +12,63 @@
 	<meta name="format-detection" content="telephone=no">
 	<%@include file="/common/head.jsp"%>
 	<link rel="icon" href="favicon.ico">
+	<link rel="stylesheet" href="${ctx}/css/css/style.css">
+	<script type="text/javascript" src="${ctx}/js/jquery-1.10.2.min.js"></script>
 	<link rel="stylesheet" href="${ctx}/layui/css/layui.css" media="all" />
 	<link rel="stylesheet" href="${ctx}/css/font_eolqem241z66flxr.css" media="all" />
 	<link rel="stylesheet" href="${ctx}/css/main.css" media="all" />
 </head>
+<script type="text/javascript">
+    $(document).ready(function(){
+
+        /* ----- 侧边悬浮 ---- */
+        $(document).on("mouseenter", ".suspension .a", function(){
+            var _this = $(this);
+            var s = $(".suspension");
+            var isService = _this.hasClass("a-service");
+            var isServicePhone = _this.hasClass("a-service-phone");
+            var isQrcode = _this.hasClass("a-qrcode");
+            if(isService){ s.find(".d-service").show().siblings(".d").hide();}
+            if(isServicePhone){ s.find(".d-service-phone").show().siblings(".d").hide();}
+            if(isQrcode){ s.find(".d-qrcode").show().siblings(".d").hide();}
+        });
+        $(document).on("mouseleave", ".suspension, .suspension .a-top", function(){
+            $(".suspension").find(".d").hide();
+        });
+        $(document).on("mouseenter", ".suspension .a-top", function(){
+            $(".suspension").find(".d").hide();
+        });
+        $(document).on("click", ".suspension .a-top", function(){
+            $("html,body").animate({scrollTop: 0});
+        });
+        $(window).scroll(function(){
+            var st = $(document).scrollTop();
+            var $top = $(".suspension .a-top");
+            if(st > 400){
+                $top.css({display: 'block'});
+            }else{
+                if ($top.is(":visible")) {
+                    $top.hide();
+                }
+            }
+        });
+
+    });
+
+    function clearUser() {
+        //
+        sessionStorage.removeItem("12345");
+        $('#close').on('click',function(){
+            location.href="home/index.shtml";
+        });
+    }
+</script>
 <body class="main_body">
 	<div class="layui-layout layui-layout-admin">
 		<!-- 顶部 -->
 		<div class="layui-header header">
 			<div class="layui-main">
-				<a href="home/index.shtml" class="logo" style="margin-top: -5px">家具通智能设计/拆单系统</a>
+				<a onclick="clearUser();" id="close" class="logo" style="margin-top: 0px;margin-left: -30px">家具通智能设计/拆单系统</a>
 			    <!-- 天气信息 -->
 			    <div class="weather">
 			    	<div id="tp-weather-widget"></div>
@@ -81,12 +128,56 @@
 						</div>--%>
 				</div>
 			</div>
+			<div style="height:10000px;"></div>
+			<div class="suspension">
+				<div class="suspension-box">
+					<a href="#" class="a a-service "><i class="i"></i></a>
+					<a href="javascript:;" class="a a-service-phone "><i class="i"></i></a>
+					<a href="javascript:;" class="a a-qrcode"><i class="i"></i></a>
+					<%--<a href="#" class="a a-cart"><i class="i"></i></a>
+					<a href="javascript:;" class="a a-top"><i class="i"></i></a>--%>
+					<div class="d d-service">
+						<i class="arrow"></i>
+						<div class="inner-box">
+							<div class="d-service-item clearfix">
+								<a href="tencent://message/?uin=920098241&Site=qq&Menu=yes" class="clearfix"><span class="circle"><i class="i-qq"></i></span><h3>咨询在线客服</h3></a>
+							</div>
+						</div>
+					</div>
+					<div class="d d-service-phone">
+						<i class="arrow"></i>
+						<div class="inner-box">
+							<div class="d-service-item clearfix">
+								<span class="circle"><i class="i-tel"></i></span>
+								<div class="text">
+									<p>服务热线</p>
+									<p class="red number">4001-123-456</p>
+								</div>
+							</div>
+							<div class="d-service-intro clearfix">
+								<p><i></i>功能和特性</p>
+								<p><i></i>价格和优惠</p>
+								<p><i></i>获取内部资料</p>
+							</div>
+						</div>
+					</div>
+					<div class="d d-qrcode">
+						<i class="arrow"></i>
+						<div class="inner-box">
+							<div class="qrcode-img"><img src="${ctx}/images/side_ewm.jpg" alt=""></div>
+							<p>微信服务号</p>
+						</div>
+					</div>
+
+				</div>
+			</div>
 		</div>
 		<!-- 底部 -->
-		<div class="layui-footer footer">
+		<%--<div class="layui-footer footer">
 			<p>copyright @2019 家具通智能设计/拆单系统 更多模板：<a href="http://www.mycodes.net/" target="_blank">源码之家</a>　　<a onclick="donation()" class="layui-btn layui-btn-danger l·ayui-btn-small">捐赠作者</a></p>
-		</div>
+		</div>--%>
 	</div>
+
 
 	<!-- 锁屏 -->
 	<div class="admin-header-lock" id="lock-box" style="display: none;width: auto;height: auto">

@@ -14,7 +14,7 @@ var navs = [
 			{
 				"title": "订单查询",
 				"icon": "&#xe631;",
-				"href": "",
+				"href": "home/queryorder",
 				"spread": false
 			}]
 	},
@@ -78,7 +78,7 @@ var navs = [
 				"title": "测量服务",
 				"icon": "&#xe631;",
 				"href": "",
-				"spread": false
+				"spread": true
 			},
 			{
 				"title": "设计/拆单",

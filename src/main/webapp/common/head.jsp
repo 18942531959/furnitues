@@ -22,27 +22,12 @@
 <link rel="stylesheet" href="${ctx}/css/layui/layui-v2.4.5/layui/css/layui.css">
 <script  src="${ctx}/css/layui/layui-v2.4.5/layui/layui.js"></script>
 <script  src="${ctx}/css/layui/layui-v2.4.5/layui/css/layui.css"></script>
-<link href="css/bootstrap.min.css" rel="stylesheet">
 <!-- End core plugin -->
 <script src="js/assets/js/jquery.min.js"></script>
-<script src="js/assets/js/bootstrap.min.js"></script>
+<script src="js/assets/js/jquery.cookie.js"></script>
 <link href="css/style.css" rel="stylesheet">
 <link rel="stylesheet" href="css/reset.css">
 <link rel="stylesheet" href="css/property.css">
-<%--<link rel="stylesheet" type="text/css" href="${ctx}css/good/base.css">
-<link rel="stylesheet" type="text/css" href="${ctx}css/good/media_index.css">
-<link rel="stylesheet" type="text/css" href="${ctx}css/good/mod.css">
-<link rel="stylesheet" type="text/css" href="${ctx}css/good/style.css">--%>
-<link rel="stylesheet" type="text/css" href="${ctx}/statics/css/style.css">
-<link rel="stylesheet" type="text/css" href="${ctx}/statics/css/swiper-3.4.2.min.css" />
-<script src="${ctx}/statics/js/jquery-1.11.0.js" type="text/javascript" charset="utf-8"></script>
-<script src="${ctx}/statics/js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
-<link rel="stylesheet" type="text/css" href="${ctx}/statics/css/iconfont/iconfont.css" />
-<link rel="stylesheet" type="text/css" href="${ctx}/statics/css/style1.css" />
-<script src="js/assets/js/bootstrap-table-zh-CN.js"></script>
-<%--tree--%>
-<link href="css/bootstrap-treeview.min.css"/>
-<script src="js/help/bootstrap-treeview.min.js"></script>
 <script>
     function changeDateFormat(cellval) {
         var dateVal = cellval + "";

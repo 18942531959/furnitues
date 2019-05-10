@@ -27,4 +27,18 @@ public interface IOrdersService {
      */
     List<Orders> queryOrdesUser(Orders orders);
 
+    /**
+     * 删除订单
+     * @param orders
+     * @return
+     */
+    int deleteOrders(Orders orders);
+
+
+    /**
+     * 修改订单
+     * @param orders
+     * @return
+     */
+    int updateOrders(Orders orders);
 }

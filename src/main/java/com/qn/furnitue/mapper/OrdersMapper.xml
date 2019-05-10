@@ -3,6 +3,7 @@
 <mapper namespace="com.qn.furnitue.mapper.OrdersMapper" >
   <resultMap id="BaseResultMap" type="com.qn.furnitue.model.Orders" >
     <constructor >
+      <idArg column="coid" jdbcType="INTEGER" javaType="java.lang.Integer" />
       <arg column="oid" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="oname" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="odealer" jdbcType="VARCHAR" javaType="java.lang.String" />
@@ -13,42 +14,57 @@
       <arg column="oaddress" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="ologinname" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="oremark" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="cname" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="cphone" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="caddress" jdbcType="VARCHAR" javaType="java.lang.String" />
     </constructor>
   </resultMap>
+  <sql id="Base_Column_List" >
+    coid, oid, oname, odealer, ophone, ordertime, odeliverytime, opartorder, oaddress, 
+    ologinname, oremark, cname, cphone, caddress
+  </sql>
   <insert id="insertOrders" parameterType="com.qn.furnitue.model.Orders" >
-    insert into orders (oid, oname, odealer, 
-      ophone, ordertime, odeliverytime, 
-      opartorder, oaddress, ologinname, 
-      oremark)
-    values (#{oid,jdbcType=VARCHAR}, #{oname,jdbcType=VARCHAR}, #{odealer,jdbcType=VARCHAR}, 
-      #{ophone,jdbcType=VARCHAR}, #{ordertime,jdbcType=VARCHAR}, #{odeliverytime,jdbcType=VARCHAR}, 
-      #{opartorder,jdbcType=VARCHAR}, #{oaddress,jdbcType=VARCHAR}, #{ologinname,jdbcType=VARCHAR}, 
-      #{oremark,jdbcType=VARCHAR})
+    insert into orders (coid, oid, oname, 
+      odealer, ophone, ordertime, 
+      odeliverytime, opartorder, oaddress, 
+      ologinname, oremark, cname, 
+      cphone, caddress)
+    values (#{coid,jdbcType=INTEGER}, #{oid,jdbcType=VARCHAR}, #{oname,jdbcType=VARCHAR}, 
+      #{odealer,jdbcType=VARCHAR}, #{ophone,jdbcType=VARCHAR}, #{ordertime,jdbcType=VARCHAR}, 
+      #{odeliverytime,jdbcType=VARCHAR}, #{opartorder,jdbcType=VARCHAR}, #{oaddress,jdbcType=VARCHAR}, 
+      #{ologinname,jdbcType=VARCHAR}, #{oremark,jdbcType=VARCHAR}, #{cname,jdbcType=VARCHAR}, 
+      #{cphone,jdbcType=VARCHAR}, #{caddress,jdbcType=VARCHAR})
   </insert>
-    <select id="queryOredesPager" resultType="com.qn.furnitue.model.Orders"
-            parameterType="com.qn.furnitue.model.Orders">
-        select o.oid,o.oname,o.odealer,o.ophone,o.ordertime,o.odeliverytime,o.oaddress,o.oremark,c.coid,c.cname,c.cphone,c.caddress from orders o
-        inner join client c
-        on o.oid=c.coid
-        inner join user u
-        on o.ologinname=u.uloginnam
-        where 1=1
-        <if test="null!=oid and ''!=oid">
-          and oid=#{oid}
-        </if>
-        <if test="null!=oname and ''!=oname">
-          and oname=#{oname}
-        </if>
-        <if test="null!=odealer and ''!=odealer">
-          and odealer=#{odealer}
-        </if>
-        <if test="null!=ologinname and ''!=ologinname">
-          and ologinname=#{ologinname}
-        </if>
-        order by cid DESC
-    </select>
-    <select id="queryOrdesUser" resultType="com.qn.furnitue.model.Orders"
-            parameterType="com.qn.furnitue.model.Orders">
-        select oid from orders
-    </select>
+  <update id="updateOrders" parameterType="com.qn.furnitue.model.Orders">
+    update orders set
+    oid=#{oid},oname=#{oname},odealer=#{odealer},odealer=#{odealer},ophone=#{ophone},odeliverytime=#{odeliverytime},
+    opartorder=#{opartorder},oaddress=#{oaddress},oremark=#{oremark},cname=#{cname},cphone=#{cphone},caddress=#{caddress} where coid=#{coid}
+  </update>
+  <delete id="deleteOrders" parameterType="com.qn.furnitue.model.Orders">
+    delete from orders
+    where oid=#{oid}
+  </delete>
+  <select id="queryOredesPager" resultType="com.qn.furnitue.model.Orders"
+          parameterType="com.qn.furnitue.model.Orders">
+    select distinct o.coid,o.oid,o.oname,o.odealer,o.ophone,o.ordertime,o.odeliverytime,o.opartorder,o.oaddress,o.oremark,o.cname,o.cphone,o.caddress from orders o
+    inner join user u
+    on o.ologinname=u.uloginname
+    where 1=1
+    <if test="null!=oid and ''!=oid">
+      and oid=#{oid}
+    </if>
+    <if test="null!=oname and ''!=oname">
+      and oname=#{oname}
+    </if>
+    <if test="null!=odealer and ''!=odealer">
+      and odealer=#{odealer}
+    </if>
+    and ologinname=#{ologinname}
+    order by coid DESC
+  </select>
+  <select id="queryOrdesUser" resultType="com.qn.furnitue.model.Orders"
+          parameterType="com.qn.furnitue.model.Orders">
+    select oid from orders
+  </select>
+
 </mapper>

@@ -2,13 +2,14 @@ package com.qn.furnitue.model;
 
 import lombok.ToString;
 
+import java.io.Serializable;
 import java.util.Date;
 
 @ToString
-public class User {
-    private Integer uid;
+public class User implements Serializable {
+    private String uid;
 
-    private String uloginnam;
+    private String uloginname;
 
     private String upassword;
 
@@ -24,17 +25,19 @@ public class User {
 
     private String uemail;
 
-    private Date ulogintim;
+    private Date ulogintime;
 
-    private Date ulastlogi;
+    private Date ulastLogi;
 
-    private Long ucount;
+    private Integer ucount;
 
-    private Long urole;
+    private Integer urole;
 
-    public User(Integer uid, String uloginnam, String upassword, String uname, String sex, Integer uage, Date utime, String uphone, String uemail, Date ulogintim, Date ulastlogi, Long ucount, Long urole) {
+    private Integer urepassword;
+
+    public User(String uid, String uloginname, String upassword, String uname, String sex, Integer uage, Date utime, String uphone, String uemail, Date ulogintime, Date ulastLogi, Integer ucount, Integer urole, Integer urepassword) {
         this.uid = uid;
-        this.uloginnam = uloginnam;
+        this.uloginname = uloginname;
         this.upassword = upassword;
         this.uname = uname;
         this.sex = sex;
@@ -42,30 +45,31 @@ public class User {
         this.utime = utime;
         this.uphone = uphone;
         this.uemail = uemail;
-        this.ulogintim = ulogintim;
-        this.ulastlogi = ulastlogi;
+        this.ulogintime = ulogintime;
+        this.ulastLogi = ulastLogi;
         this.ucount = ucount;
         this.urole = urole;
+        this.urepassword = urepassword;
     }
 
     public User() {
         super();
     }
 
-    public Integer getUid() {
+    public String getUid() {
         return uid;
     }
 
-    public void setUid(Integer uid) {
+    public void setUid(String uid) {
         this.uid = uid;
     }
 
-    public String getUloginnam() {
-        return uloginnam;
+    public String getUloginname() {
+        return uloginname;
     }
 
-    public void setUloginnam(String uloginnam) {
-        this.uloginnam = uloginnam;
+    public void setUloginname(String uloginname) {
+        this.uloginname = uloginname;
     }
 
     public String getUpassword() {
@@ -124,35 +128,43 @@ public class User {
         this.uemail = uemail;
     }
 
-    public Date getUlogintim() {
-        return ulogintim;
+    public Date getUlogintime() {
+        return ulogintime;
     }
 
-    public void setUlogintim(Date ulogintim) {
-        this.ulogintim = ulogintim;
+    public void setUlogintime(Date ulogintime) {
+        this.ulogintime = ulogintime;
     }
 
-    public Date getUlastlogi() {
-        return ulastlogi;
+    public Date getUlastLogi() {
+        return ulastLogi;
     }
 
-    public void setUlastlogi(Date ulastlogi) {
-        this.ulastlogi = ulastlogi;
+    public void setUlastLogi(Date ulastLogi) {
+        this.ulastLogi = ulastLogi;
     }
 
-    public Long getUcount() {
+    public Integer getUcount() {
         return ucount;
     }
 
-    public void setUcount(Long ucount) {
+    public void setUcount(Integer ucount) {
         this.ucount = ucount;
     }
 
-    public Long getUrole() {
+    public Integer getUrole() {
         return urole;
     }
 
-    public void setUrole(Long urole) {
+    public void setUrole(Integer urole) {
         this.urole = urole;
+    }
+
+    public Integer getUrepassword() {
+        return urepassword;
+    }
+
+    public void setUrepassword(Integer urepassword) {
+        this.urepassword = urepassword;
     }
 }

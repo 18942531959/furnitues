@@ -12,7 +12,6 @@
     <link href="${ctx}/css/all1.css" rel="stylesheet" type="text/css">
     <link href="${ctx}/js/editor/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="${ctx}/js/editor/css/froala_editor.min.css" rel="stylesheet" type="text/css">
-    <script type="text/javascript" src="${ctx}/js/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="${ctx}/js/order/new-order.js"></script>
 </head>
 <%--<%
@@ -22,7 +21,7 @@
     Date mydate=new Date();
 %>--%>
 <body style="background-color: #e6ecf5" onload="timeOnlod();">
-<div class="book_con01">
+<div class="book_con01" style="padding-top: 0px;">
     <form  id="form_demo" class="layui-form" action="" method="post" >   <p class="book_p">
         <table class="book_table" border="1" cellpadding="10">
             <tr><td colspan="4" style="text-align: center">新建订单</td>
@@ -81,14 +80,14 @@
             </tr>
             <tr>
                 <td>  <label class="td_label">客户姓名</label><i class="i_start" ></i></td>
-                <td colspan="3"><input type="text" class="book_input03" oninput="if(value.length>10)value=value.slice(0,10)" name="cname" id="cname" minlength="2"  required lay-verify="required" autocomplete="off"/></td>
+                <td><input type="text" class="book_input03" oninput="if(value.length>10)value=value.slice(0,10)" name="cname" id="cname" minlength="2"  required lay-verify="required" autocomplete="off"/></td>
                 <td><label class="td_label">客户电话</label></td>
                 <td><input type="text" class="book_input03" name="cphone" id="cphone" oninput="if(value.length>11)value=value.slice(0,11)" pattern="[0-9]*"
                            onchange="isCphone(this.value)" minlength="2"  required lay-verify="required" autocomplete="off"/></td>
             </tr>
             <tr>
                 <td><label class="td_label">客户地址</label></td>
-                <td><input type="text" class="book_input03" oninput="if(value.length>50)value=value.slice(0,50)" name="caddress" id="caddress" minlength="2"  required lay-verify="required" autocomplete="off"/></td>
+                <td colspan="3"><input type="text" class="book_input03" oninput="if(value.length>50)value=value.slice(0,50)" name="caddress" id="caddress" minlength="2"  required lay-verify="required" autocomplete="off"/></td>
             </tr>
         </table>
         <p class="book_foot"><button style="width: 100px;" type="reset" class="layui-btn layui-btn-danger" onclick="closes()">重置</button>

@@ -1,17 +1,13 @@
 package com.qn.furnitue.mapper;
 
 import com.qn.furnitue.model.User;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface UserMapper {
-    int deleteByPrimaryKey(Integer uid);
-
     int insert(User record);
-
-    int insertSelective(User record);
-
-    User selectByPrimaryKey(Integer uid);
-
-    int updateByPrimaryKeySelective(User record);
-
-    int updateByPrimaryKey(User record);
+    /*
+    * 用户登录
+    * */
+    User queryUser(User user);
 }

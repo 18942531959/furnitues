@@ -1,9 +1,8 @@
 package com.qn.furnitue.model;
 
-import lombok.ToString;
-
-@ToString
 public class Orders {
+    private Integer coid;
+
     private String oid;
 
     private String oname;
@@ -24,7 +23,14 @@ public class Orders {
 
     private String oremark;
 
-    public Orders(String oid, String oname, String odealer, String ophone, String ordertime, String odeliverytime, String opartorder, String oaddress, String ologinname, String oremark) {
+    private String cname;
+
+    private String cphone;
+
+    private String caddress;
+
+    public Orders(Integer coid, String oid, String oname, String odealer, String ophone, String ordertime, String odeliverytime, String opartorder, String oaddress, String ologinname, String oremark, String cname, String cphone, String caddress) {
+        this.coid = coid;
         this.oid = oid;
         this.oname = oname;
         this.odealer = odealer;
@@ -35,10 +41,21 @@ public class Orders {
         this.oaddress = oaddress;
         this.ologinname = ologinname;
         this.oremark = oremark;
+        this.cname = cname;
+        this.cphone = cphone;
+        this.caddress = caddress;
     }
 
     public Orders() {
         super();
+    }
+
+    public Integer getCoid() {
+        return coid;
+    }
+
+    public void setCoid(Integer coid) {
+        this.coid = coid;
     }
 
     public String getOid() {
@@ -119,5 +136,29 @@ public class Orders {
 
     public void setOremark(String oremark) {
         this.oremark = oremark;
+    }
+
+    public String getCname() {
+        return cname;
+    }
+
+    public void setCname(String cname) {
+        this.cname = cname;
+    }
+
+    public String getCphone() {
+        return cphone;
+    }
+
+    public void setCphone(String cphone) {
+        this.cphone = cphone;
+    }
+
+    public String getCaddress() {
+        return caddress;
+    }
+
+    public void setCaddress(String caddress) {
+        this.caddress = caddress;
     }
 }

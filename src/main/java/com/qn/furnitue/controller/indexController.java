@@ -30,6 +30,17 @@ public class indexController {
         session.setAttribute(SessionLocaleResolver.LOCALE_SESSION_ATTRIBUTE_NAME, Locale.CHINA);
         return "consumer/consumer";
     }
+
+    /**
+     * 注册页面的跳转
+     * @param session
+     * @return
+     */
+    @RequestMapping("/home/produreReg")
+    public String toprodureReg(HttpSession session){
+        session.setAttribute(SessionLocaleResolver.LOCALE_SESSION_ATTRIBUTE_NAME, Locale.CHINA);
+        return "producer/produre-reg";
+    }
     /**
      * 设计/拆单页面的跳转
      * @param session
@@ -61,6 +72,17 @@ public class indexController {
     public String toHindex(HttpSession session){
         session.setAttribute(SessionLocaleResolver.LOCALE_SESSION_ATTRIBUTE_NAME, Locale.CHINA);
         return "index";
+    }
+
+    /**
+     * 进入修改页面
+     * @param session
+     * @return
+     */
+    @RequestMapping("/home/updateorder")
+    public String toupdateorder(HttpSession session){
+        session.setAttribute(SessionLocaleResolver.LOCALE_SESSION_ATTRIBUTE_NAME, Locale.CHINA);
+        return "order/update-order";
     }
 
 

@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <title>生产者登入页面</title>
     <%@include file="/common/head.jsp"%>
+    <script src="${ctx}/js/login/login.js"/>
+    <script>
+        console.log("aa");
+    </script>
     <style type="text/css">
-        .loginbg{background: url('/images/loginbg.png');background-size:cover;}
-        .login-box{width:400px;height: 480px;position: absolute;left: 50%;top: 50%;margin: -240px 0 0 -250px;background: #ececee;padding: 0 50px;}
-        .logo-img{margin-top:30px;text-align: center;}
         .inp-box{margin-top:45px;width: 100%;overflow: hidden;}
         .inp-box p{font-size: 14px;margin:10px 0 5px 0;}
         .inp-box input{width:358px;border-radius: 3px;height: 45px;line-height: 45px;border: 1px solid #ccc;color: #aaa;padding: 0 20px;outline:none;}
@@ -34,35 +35,11 @@
             z-index: 10;
             margin-top: -260px;
             width: 650px;
-             height: 450px;
+            height: 450px;
             margin-left: -300px;
             background-color: #f5f5f5;
         }
 
-        .ui-dialog-content {
-            padding: 15px 20px;
-        }
-        .ui-dialog-pt15 {
-            padding-top: 15px;
-        }
-
-        .ui-dialog-l40 {
-            height: 40px;
-            line-height: 40px;
-            text-align: right;
-        }
-
-        .ui-dialog-input {
-            width: 100%;
-            height: 40px;
-            margin: 0;
-            padding: 0;
-            border:1px solid #d5d5d5;
-            font-size: 16px;
-            color: #c1c1c1;
-            text-indent: 25px;
-            outline: none;
-        }
 
         .ui-dialog-submit {
 
@@ -101,67 +78,30 @@
             width:100%;
             border:0;
         }
-        .ui-dialog-content{
-            position:absolute;
-            left: 54%;
-            z-index: 10;
-            font-size:25px;
-            margin-top: -300px;
-            margin-left: -200px;
-        }
-        .login{
-            text-align:center;
-            position:absolute;
-            left: 60%;
-            top: 103%;
-            z-index: 10;
-            font-size:22px;
-            margin-top: 25px;
-            margin-left: -200px;
-        }
+
     </style>
 </head>
 <body style="background-color: #00aeff">
-<div class="ui-dialog" id="dialog">
-    <div class="layui-row">
-          <div class="layui-col-md5">
-                  <div class="layui-col-md9" style="left: 250px">
-                      <div class="grid-demo grid-demo-bg2">--%>
-                        <div class="ui-dialog-content" style="left: -20px">
-                            <div class="ui-dialog-l40 ui-dialog-pt15" style="margin-top: 400px;margin-left: 110px">
-                                <font face="楷体" style="font-size: 24px;padding-top: 200px"> 家具通&nbsp;云端智能设计/拆单系统</font>&nbsp;&nbsp;
-                               <input class="ui-dialog-input ui-dialog-input-username" style="margin-right: 120px" type="input"  placeholder="手机/邮箱/用户名" />
-                            </div>
-                            <div class="ui-dialog-l40 ui-dialog-pt15" style="margin-left: 110px">
-                                <input class="ui-dialog-input ui-dialog-input-password" type="password" placeholder="密码" />
-                            </div>
-                            <div>
-                                <a class="ui-dialog-submit" style="margin-top: 40px;size: 90px;width: 250px;margin-left: 180px" href="${ctx}/home/index">登录</a>
-                            </div>
-                            <br>
-                            <div class="ui-dialog-l45" style="margin-left: 270px;font-size: 15px">
-                                <a href="${ctx}/home/loginagain">登录</a>
-                                <a href="${ctx}/home/forgetPwd" style="color: #0e0e0e" >验证码登录</a>&nbsp; |&nbsp;
-                                <a href="${ctx}/home/produrereg" style="color: #0e0e0e">立即注册</a>
-                            </div>
-                            <div class="login">
-                                <font face="楷体" href="${ctx}/home/consumer" color="gray" style="margin-left: 60px" ><a href="${ctx}/home/consumer">点击浏览全城家居建材市场</a></font>
-                            </div>
-                        </div>
-                            <div class="inp-box">
-                                <p style="margin-left: 120px">用户名：</p>
-                                 <input type="text" placeholder="请输入您的用户名"style="margin-left: 120px;" id="username"/>
-                                <p style="margin-left: 120px">密码：</p>
-                                <input  type="password" id="password" style="margin-left: 120px;" placeholder="请输入您的密码"/>
-                                <div id="errorMsg"  style="width: 60%;margin: 0 auto ;display:none;">
-                                    <span class="red" id="msg"></span>
-                                </div>
-                                <a id="sub" style="margin-left: 200px;width: 200px">登录</a>
-                            </div>
-                   <%-- </div>
-                </div>
+<div class="ui-dialog" id="dialog" style="background-image: url('${ctx}/images/log.jpg')">
+    <div class="inp-box" >
+        <font face="楷体" style="font-size: 24px;padding-left: 170px"> 家具通&nbsp;云端智能设计/拆单系统</font>
+        <p style="margin-left: 170px">用户名：</p>
+        <input type="text" placeholder="请输入您的用户名"style="margin-left: 170px;" name="uloginname" id="uloginname"/>
+        <p style="margin-left: 170px">密码：</p>
+        <input  type="password" name="upassword" id="upassword" style="margin-left: 170px;" placeholder="请输入您的密码"/>
+        <div id="errorMsg"  style="width: 60%;margin: 0 auto ;display:none;">
+            <span class="red" id="msg"></span>
         </div>
-    </div>--%>
+        <a class="ui-dialog-button" id="btnlogin" style="margin-top: 40px;size: 90px;width: 250px;margin-left: 180px">登录</a>
+    </div>
+    <br>
+    <div class="ui-dialog-l45" style="margin-left: 280px;font-size: 15px">
+        <a href="${ctx}/home/index" style="color: #0e0e0e">忘记密码</a>&nbsp; |&nbsp;
+        <a href="${ctx}/home/produrereg" style="color: #0e0e0e">立即注册</a>
+        <font face="楷体" href="${ctx}/home/consumer" color="gray"  ><a style="padding-right: 20px" href="${ctx}/home/consumer">点击浏览全城家居建材市场</a></font>
+    </div>
+
 </div>
 </body>
+
 </html>

@@ -1,8 +1,8 @@
 package com.qn.furnitue.service.imp;
 
+import com.qn.furnitue.service.IOrdersService;
 import com.qn.furnitue.mapper.OrdersMapper;
 import com.qn.furnitue.model.Orders;
-import com.qn.furnitue.service.IOrdersService;
 import com.qn.furnitue.util.PageBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -42,4 +42,26 @@ public class OrdersServiceImpl implements IOrdersService {
     public List<Orders> queryOrdesUser(Orders orders) {
         return ordersMapper.queryOrdesUser(orders);
     }
+
+    /**
+     * 删除订单
+     * @param orders
+     * @return
+     */
+    @Override
+    public int deleteOrders(Orders orders) {
+        return ordersMapper.deleteOrders(orders);
+    }
+
+    /**
+     * 修改订单
+     * @param orders
+     * @return
+     */
+    @Override
+    public int updateOrders(Orders orders) {
+        return ordersMapper.updateOrders(orders);
+    }
+
+
 }
