@@ -17,7 +17,7 @@
 <h1><font face="楷体" style="font-size: 40px;"> 家具通&nbsp;云端智能设计/拆单系统</font></h1>
 <div class="container w3layouts agileits" style="padding-top: -100px">
     <div class="login w3layouts agileits">
-        <img src="images/log.jpg">
+        <img src="images/log.jpg" style="height: 430px;margin-left:60px">
     </div>
     <div class="register w3layouts agileits">
         <h2 style="padding-left: 130px">用 户 登 录</h2>
@@ -31,10 +31,10 @@
                 <label for="brand1"><span></span>记住我</label>
             </li>
         </ul>
-        <div class="send-button w3layouts agileits">
-                <input type="submit" id="btnlogin" value="登 录">
+        <div class="send-button w3layouts agileits" style="padding-left: 120px">
+                <input type="submit"  id="btnlogin" value="登 录">
         </div>
-        <a href="#">忘记密码</a>&nbsp;&nbsp;&nbsp;<a href="#">注册登录</a>
+        <a href="/home/index">忘记密码</a>&nbsp;&nbsp;&nbsp;<a href="/home/produrereg">注册登录</a>
         <div class="social-icons w3layouts agileits">
             <p>- 其他方式登录 -</p>
             <ul>
@@ -50,7 +50,16 @@
                 <div class="clear"> </div>
             </ul>
         </div>
-        <div class="clear"></div>
+        <div class="social-icons w3layouts agileits">
+            <p>- 游客浏览 -</p>
+            <font face="楷体">
+                <a style="padding-left:20px;font-size: 24px" href="${ctx}/home/consumer">点击浏览全城家居建材市场</a></font>
+           <%-- <ul>
+                <li class="weixin w3ls">
+                   </li>
+                <div class="clear"> </div>
+            </ul>--%>
+        </div>
     </div>
     <div class="clear"></div>
 </div>
