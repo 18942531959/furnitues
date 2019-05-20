@@ -2,6 +2,7 @@ package com.qn.furnitue.controller;
 
 import com.qn.furnitue.model.User;
 import com.qn.furnitue.service.IUserService;
+import com.qn.furnitue.util.GetMessageCode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -33,5 +34,13 @@ public class LoginController {
             map.put("message", "登录成功");
         }
         return map;
+    }
+    @RequestMapping("/regitstUser")
+    public @ResponseBody User sendSMS(User user){
+        //根据获取到的手机号发送验证码
+        String code= GetMessageCode.getCode(user.getUloginname());
+        user.setStatus(1);
+        user.setData(code);
+        return user;
     }
 }

@@ -34,6 +34,37 @@ public class User implements Serializable {
     private Integer urole;
 
     private Integer urepassword;
+    /*
+    * 手机号注册需要的参数
+    * */
+    private static final long serialVersionUID = 1L;
+    private int status;
+    private String msg;
+    private Object data;
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
+    }
+
+    public String getMsg() {
+        return msg;
+    }
+
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
+
+    public Object getData() {
+        return data;
+    }
+
+    public void setData(Object data) {
+        this.data = data;
+    }
 
     public User(String uid, String uloginname, String upassword, String uname, String sex, Integer uage, Date utime, String uphone, String uemail, Date ulogintime, Date ulastLogi, Integer ucount, Integer urole, Integer urepassword) {
         this.uid = uid;

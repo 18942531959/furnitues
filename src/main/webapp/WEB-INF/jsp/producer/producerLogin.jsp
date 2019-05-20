@@ -17,7 +17,7 @@
 <h1><font face="楷体" style="font-size: 40px;"> 家具通&nbsp;云端智能设计/拆单系统</font></h1>
 <div class="container w3layouts agileits" style="padding-top: -100px">
     <div class="login w3layouts agileits">
-        <img src="images/log.jpg" style="height: 430px;margin-left:60px">
+        <img src="images/log.jpg" style="height: 430px;margin-left:auto;padding-top: auto">
     </div>
     <div class="register w3layouts agileits">
         <h2 style="padding-left: 130px">用 户 登 录</h2>

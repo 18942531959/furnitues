@@ -7,8 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.servlet.http.HttpServletRequest;
-
 @Service
 @Transactional
 public class UserServiceImpl implements IUserService {
@@ -19,7 +17,7 @@ public class UserServiceImpl implements IUserService {
     @Transactional
     @Override
     public int insertUser(User record) {
-        return userMapper.insert(record);
+        return userMapper.insertUser(record);
     }
     @Transactional
     @Override
