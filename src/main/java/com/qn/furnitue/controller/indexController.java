@@ -131,14 +131,4 @@ public class indexController {
         return "producer/produre-forgetPwd";
     }
 
-/**
- * 登录
- * @param session
- * @return
- */
-    @RequestMapping("/home/loginagain")
-    public String tologin(HttpSession session){
-        session.setAttribute(SessionLocaleResolver.LOCALE_SESSION_ATTRIBUTE_NAME, Locale.CHINA);
-        return "/login.jsp";
-    }
 }

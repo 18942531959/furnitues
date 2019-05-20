@@ -54,11 +54,6 @@
             <p>- 游客浏览 -</p>
             <font face="楷体">
                 <a style="padding-left:20px;font-size: 24px" href="${ctx}/home/consumer">点击浏览全城家居建材市场</a></font>
-           <%-- <ul>
-                <li class="weixin w3ls">
-                   </li>
-                <div class="clear"> </div>
-            </ul>--%>
         </div>
     </div>
     <div class="clear"></div>

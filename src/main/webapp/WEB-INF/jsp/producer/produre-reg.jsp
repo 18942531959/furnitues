@@ -50,7 +50,7 @@
 </head>
 <body>
     <div class="login w3layouts agileits" style="margin-left: -60px;margin-top: -2%;">
-        <img src="${ctx}/images/log.jpg" style="height: auto;width:auto;margin-left:130px;margin-top: 45px;">
+        <img src="${ctx}/images/log.jpg" style="height: 670px;margin-left:130px;margin-top: 68px">
     </div>
     <div class="register w3layouts agileits">
         <div>
@@ -59,12 +59,13 @@
         </div>
         <h2 style="margin-left: 30%">注 册</h2>
         <form action="#" method="post">
-            <input type="text"  id="phone" name="uloginname" placeholder="用户名" onchange="isCphone(this.value);" required="">
-            <input type="password" Name="Email"  name="upassword" id="upassword" placeholder="密码" required="">
-            <input type="password" id="urepassword" name="urepassword" placeholder="确定密码" required="">
-            <input type="text"  name="code" placeholder="验证码" id="code" required="" style="width: 90px">
-            <input type="submit" class="btn" id="btn" name="btn" style="margin-top: 0px;width: 216px;border-left-width: 3px;margin-left: 100px;" value="发送验证码" onclick="sendMessage()" />
+            <input type="text"  style="margin-left: 90px;" id="phone" name="uloginname" placeholder="用户名" onchange="isCphone(this.value);" required="">
+            <input type="password" style="margin-left: 90px;" Name="Email"  name="upassword" id="upassword" placeholder="密码" required="">
+            <input type="password" style="margin-left: 90px;" id="urepassword" name="urepassword" placeholder="确定密码" required="">
+            <input type="text"   name="code" placeholder="验证码" id="code" required="" style="width: 90px;margin-left: 90px;">
+            <input type="submit"  class="btn" id="btn" name="btn" style="width: 216px;border-left-width: 3px;margin-left: 400px;margin-bottom: 20px;" value="发送验证码" onclick="sendMessage()" />
         </form>
+        <a style="padding-left:100px;font-size: 24px;color: white" href="javascript:history.go(-1)">已有账号，去登陆?</a>
         <div class="send-button w3layouts agileits" style="margin-left: 20%;padding-top: 100px">
                 <input type="submit"  class="btn" id="lo" value="免费注册">
         </div>
