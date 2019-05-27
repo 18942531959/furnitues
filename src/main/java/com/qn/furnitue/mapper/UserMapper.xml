@@ -20,16 +20,9 @@
     </constructor>
   </resultMap>
   <insert id="insertUser" parameterType="com.qn.furnitue.model.User">
-    insert into user (uid, uloginname, upassword,
-      uname, sex, uage, utime,
-      uphone, uemail, ulogintime,
-      ulast_logi, ucount, urole,
-      urepassword)
-    values (#{uid,jdbcType=VARCHAR}, #{uloginname,jdbcType=VARCHAR}, #{upassword,jdbcType=VARCHAR},
-      #{uname,jdbcType=VARCHAR}, #{sex,jdbcType=VARCHAR}, #{uage,jdbcType=INTEGER}, #{utime,jdbcType=TIMESTAMP},
-      #{uphone,jdbcType=VARCHAR}, #{uemail,jdbcType=VARCHAR}, #{ulogintime,jdbcType=TIMESTAMP},
-      #{ulastLogi,jdbcType=TIMESTAMP}, #{ucount,jdbcType=INTEGER}, #{urole,jdbcType=INTEGER},
-      #{urepassword,jdbcType=INTEGER})
+    insert into user (uid, uloginname, upassword,uphone,ulogintime,urole,urepassword)
+    values (#{uid}, #{uloginname},#{upassword},#{uphone},#{ulogintime},#{urole},
+      #{urepassword})
   </insert>
   <select id="queryUser" parameterType="com.qn.furnitue.model.User" resultType="com.qn.furnitue.model.User">
         select uloginname,upassword,urole from user where  uloginname=#{uloginname} and  upassword=#{upassword}

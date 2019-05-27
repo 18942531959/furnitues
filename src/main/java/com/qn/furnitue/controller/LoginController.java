@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 
 
 @Controller
@@ -35,12 +36,27 @@ public class LoginController {
         }
         return map;
     }
+    /*
+    *短信验证码
+    * */
     @RequestMapping("/regitstUser")
     public @ResponseBody User sendSMS(User user){
         //根据获取到的手机号发送验证码
-        String code= GetMessageCode.getCode(user.getUloginname());
-        user.setStatus(1);
-        user.setData(code);
+        String code= GetMessageCode.getCode(user.getUphone());
+        user.setStatus(1);//验证码状态
+        user.setData(code);//手机号
         return user;
+    }
+    @RequestMapping("/UserRe")
+    @ResponseBody
+    public Map<String,Object> UserRe(User user){
+        String uphone = user.getUphone();
+        //根据手机号查询是否被注册过 如果被注册过 无法进去注册方法
+        //如果没有被注册过进入注册方法，页面返回false，反之true
+        user.setUid(UUID.randomUUID().toString().replace("-",""));
+        userService.insertUser(user);
+        Map<String,Object> map=new HashMap<String,Object>();
+        map.put("success",true);
+        return map;
     }
 }

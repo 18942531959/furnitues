@@ -8,10 +8,7 @@
     <link rel="stylesheet" href="css/loginCss/style.css" type="text/css" media="all">
     <script src="js/assets/js/jquery.min.js"></script>
     <script src="js/assets/js/jquery.cookie.js"></script>
-    <script src="${ctx}/js/login/login.js"/>
-    <script type="text/javascript">
-        console.log("欢迎使用家具通云端设计！");
-    </script>
+    <script src="${ctx}/js/login/login.js"></script>
 </head>
 <body>
 <h1><font face="楷体" style="font-size: 40px;"> 家具通&nbsp;云端智能设计/拆单系统</font></h1>

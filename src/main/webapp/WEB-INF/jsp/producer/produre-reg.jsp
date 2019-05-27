@@ -3,11 +3,9 @@
 <head>
     <title>齐能云端设计</title>
     <meta charset="UTF-8">
+    <%@include file="/common/head.jsp"%>
     <link rel="stylesheet" href="${ctx}/css/loginCss/style.css" type="text/css" media="all">
-    <script src="${ctx}/js/assets/js/jquery.min.js"/>
-     <script type="text/javascript">
-         console.log("欢迎注册！");
-     </script>
+    <script src="${ctx}/js/assets/js/jquery.min.js"></script>
     <script type="text/javascript">
         $(function(){
             var verifyCode = new GVerify("v_container");
@@ -57,16 +55,26 @@
             <h1 style="width: 700px;margin-top: 30px; padding-left: 100px;"><font face="楷体" style="font-size: 40px;"> 家具通&nbsp;云端智能设计/拆单系统</font>
             </h1>
         </div>
-        <h2 style="margin-left: 30%">注 册</h2>
+        <h2 style="margin-left: 50%">注 册</h2>
         <form action="#" method="post">
-            <input type="text"  style="margin-left: 90px;" id="phone" name="uloginname" placeholder="用户名" onchange="isCphone(this.value);" required="">
-            <input type="password" style="margin-left: 90px;" Name="Email"  name="upassword" id="upassword" placeholder="密码" required="">
+            <input type="text"  style="margin-left: 90px;" id="phone" name="uphone" placeholder="手机号" onchange="isCphone(this.value);" required="">
+            <input type="text"  style="margin-left: 90px;" id="uloginname" name="uloginname" placeholder="用户名" required="">
+            <input type="password" style="margin-left: 90px;"  name="upassword" id="upassword" placeholder="密码" required="">
             <input type="password" style="margin-left: 90px;" id="urepassword" name="urepassword" placeholder="确定密码" required="">
             <input type="text"   name="code" placeholder="验证码" id="code" required="" style="width: 90px;margin-left: 90px;">
             <input type="submit"  class="btn" id="btn" name="btn" style="width: 216px;border-left-width: 3px;margin-left: 400px;margin-bottom: 20px;" value="发送验证码" onclick="sendMessage()" />
+            <div style="padding-bottom: 30px">
+                <font COLOR="white" style="margin-left: 95px">注册方：</font>
+                <select id="urole" name="urole" style="margin-left: 10px;" >
+                    <option value="0">----请选择----</option>
+                    <option value="1">浏览方</option>
+                    <option value="2">经营方</option>
+                    <option value="3">生产方</option>
+                </select>
+            </div>
         </form>
         <a style="padding-left:100px;font-size: 24px;color: white" href="javascript:history.go(-1)">已有账号，去登陆?</a>
-        <div class="send-button w3layouts agileits" style="margin-left: 20%;padding-top: 100px">
+        <div class="send-button w3layouts agileits" style="margin-left: 40%;padding-top: 40px">
                 <input type="submit"  class="btn" id="lo" value="免费注册">
         </div>
     </div>
@@ -75,7 +83,7 @@
 <script type="text/javascript">
     var sms="";
     $("#btn").click(function(){
-        var phone=$("#phone").val();
+        var phone=$("#phone").val();//电话
         if(null==phone){
             alert("请输入手机号");
             return false;
@@ -83,12 +91,11 @@
             $.ajax({
                 url:"/regitstUser",
                 type:"post",
-                data:{"uloginname":phone},
+                data:{"uphone":phone},
                 cache:false,
                 dataType : "json",
                 async:true,
                 success:function(result){
-                    console.log(result)
                     if(result.status==1){
                         sms=result.data;
                     }
@@ -97,10 +104,12 @@
         }
     });
     $("#lo").click(function(){
-        var code=$("#code").val();
-        var phone=$("#phone").val();
-        var upassword=$("#upassword").val();
-        var urepassword=$("#urepassword").val();
+        var code=$("#code").val();//电话
+        var phone=$("#phone").val();//电话
+        var uloginname=$("#uloginname").val();//登录名
+        var upassword=$("#upassword").val();//密码
+        var urepassword=$("#urepassword").val();//确定密码
+        var urole=$('#urole option:selected').val();//注册方
         if(""==phone){
             alert("请输入手机号");
         }else  if(""==code){
@@ -113,8 +122,28 @@
             alert("两次密码不相同");
             return false;
         }else if(""!=code && ""!=phone){
+            alert("验证码："+sms);
+            alert("验证码2:："+code);
             if(sms==code){
-                window.location.href="/home/index";
+                $.ajax({
+                    url:"/UserRe",
+                    type:"post",
+                    data:{"uphone":phone,
+                        "uloginname":uloginname,
+                        "upassword":upassword,
+                        "urepassword":urepassword,
+                        "urole":urole},
+                    cache:false,
+                    dataType : "json",
+                    async:true,
+                    success:function(result){
+                        if(result.success){
+                           alert("跳转到生成者页面");
+                        }else{
+                            alert("跳转到注册页面");
+                        }
+                    }
+                });
             }else{
                 alert("验证码错误");
             };

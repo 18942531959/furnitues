@@ -5,11 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <%@include file="/common/head.jsp"%>
 </head>
-<script src="${ctx}/js/producer/producer-index.js"/>
-<script type="text/javascript">
-    console.log("欢迎使用设计家具");
-</script>
+<script src="${ctx}/js/producer/producer-index.js"></script>
 <body>
-
 </body>
 </html>
