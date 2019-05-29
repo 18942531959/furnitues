@@ -105,7 +105,7 @@
 		<div class="layui-side layui-bg-black" id="in">
 			<div class="user-photo">
 				<a class="img" title="我的头像" ><img src="${ctx}/images/logo.jpg"></a>
-				<p style="margin-top: -20px">欢迎登录<span class="userName" ></span></p>
+				<p style="margin-top: -10px">欢迎登录<span class="userName" ></span></p>
 			</div>
 			<div class="navBar layui-side-scroll"></div>
 		</div>

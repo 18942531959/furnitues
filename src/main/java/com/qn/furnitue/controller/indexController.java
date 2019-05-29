@@ -128,9 +128,18 @@ public class indexController {
     @RequestMapping("/home/forgetPwd")
     public String tofindforgetPwd(HttpSession session){
         session.setAttribute(SessionLocaleResolver.LOCALE_SESSION_ATTRIBUTE_NAME, Locale.CHINA);
-        String df="12.2";
-        float a=Float.parseFloat(df);
         return "producer/produre-forgetPwd";
+    }
+
+    /**
+     * 云订单系统跳转页面
+     * @param session
+     * @return
+     */
+    @RequestMapping("/indent/orderIndex")
+    public String toorderIndex(HttpSession session){
+        session.setAttribute(SessionLocaleResolver.LOCALE_SESSION_ATTRIBUTE_NAME, Locale.CHINA);
+        return "indent/orderIndex";
     }
 
 }

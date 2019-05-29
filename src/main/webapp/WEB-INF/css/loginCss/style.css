@@ -24,15 +24,11 @@
 	img{max-width:100%;}
 
 /*-- Reset Code --*/
-
-
-
 /*-- Index-Page-Styling --*/
-
 body {
     font-family: 'Roboto', sans-serif;
     text-align: center;
-    background: url("../../images/background.jpg");
+    background: url("../../images/imagelog.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
@@ -270,7 +266,7 @@ input[type="text"], input[type="password"] {
     width: 40%;
     float: left;
     border-left: 1px solid #DDD;
-    padding-left: 40px;
+    padding-left: 70px;
     text-align: left;
 }
 

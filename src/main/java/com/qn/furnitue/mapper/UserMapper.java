@@ -10,4 +10,14 @@ public interface UserMapper {
     * 用户登录
     * */
     User queryUser(User user);
+
+    /*
+    * 查询用户信息
+    * */
+    User querySinggeUser(User user);
+
+    /*
+    * 修改用户密码
+    * */
+    User updateUser(User user);
 }

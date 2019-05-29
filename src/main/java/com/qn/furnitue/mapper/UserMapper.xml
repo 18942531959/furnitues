@@ -24,7 +24,10 @@
     values (#{uid}, #{uloginname},#{upassword},#{uphone},#{ulogintime},#{urole},
       #{urepassword})
   </insert>
-  <select id="queryUser" parameterType="com.qn.furnitue.model.User" resultType="com.qn.furnitue.model.User">
+  <select id="querySinggeUser" parameterType="com.qn.furnitue.model.User" resultType="com.qn.furnitue.model.User">
         select uloginname,upassword,urole from user where  uloginname=#{uloginname} and  upassword=#{upassword}
     </select>
+  <update id="updateUser" parameterType="com.qn.furnitue.model.User" >
+        select uloginname,upassword,urole from user where  uloginname=#{uloginname} and  upassword=#{upassword}
+    </update>
 </mapper>

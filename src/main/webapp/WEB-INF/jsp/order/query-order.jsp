@@ -11,7 +11,7 @@
     <script type="text/javascript" src="${ctx}/js/order/query-order.js"></script>
 </head>
 <body>
-<div class="layui-fluid layui-form" style="left: 570px;">
+<div class="layui-fluid layui-form" style="left: 100px;">
     <div class="layui-row layui-col-space5">
         <div class="layui-form-item">
             <label class="layui-form-label">订单号:</label>

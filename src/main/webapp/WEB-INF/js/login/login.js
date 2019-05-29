@@ -1,17 +1,9 @@
 var rootPath;
 $(function () {
     rootPath = $("#absolutePath").val();
-
     $('#btnlogin').click(function () {
         login();
     });
-});
-$(document).ready(function () {
-    if ($.cookie("rmbUser") == "true") {
-        $("#ck_rmbUser").attr("checked", true);
-        $("#uloginname").val($.cookie("uloginname"));
-        $("#upassword").val($.cookie("upassword"));
-    }
 });
 function login() {
     //得到name输入框对象
@@ -25,18 +17,6 @@ function login() {
     if(upassword.length==0){
         confirm("密码不能为空");
         return false;
-    }
-    if ($("#ck_rmbUser").attr("checked")) {
-        var str_username = $("#uloginname").val();
-        var str_password = $("#upassword").val();
-        $.cookie("rmbUser", "true", { expires: 7 }); //存储一个带7天期限的cookie
-        $.cookie("uloginname", str_username, { expires: 7 });
-        $.cookie("upassword", str_password, { expires: 7 });
-    }
-    else {
-        $.cookie("rmbUser", "false", { expire: -1 });
-        $.cookie("uloginname", "", { expires: -1 });
-        $.cookie("upassword", "", { expires: -1 });
     }
     var urole= $('#urole').val();
     var text= $("#urole").find("option:selected").text();
@@ -64,7 +44,7 @@ function login() {
                 }
             }else{
                 alert("进入登录界面");
-                location.href=rootPath+"home/producerLogin";
+                location.href="/indent/orderIndex";
             }
         }
     });
