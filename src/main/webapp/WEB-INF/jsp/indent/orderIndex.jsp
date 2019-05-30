@@ -2,17 +2,20 @@
 <html>
 <head>
     <meta charset="UTF-8">
+    <%@include file="/common/head.jsp"%>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="三维家云订单生产系统，实现前后端一体化无缝对接，一键下单拆单，以信息化驱动大规模生产，提升定制家具的生产效率和管理">
+    <meta name="description" content="家具通云订单生产系统，实现前后端一体化无缝对接，一键下单拆单，以信息化驱动大规模生产，提升定制家具的生产效率和管理">
     <meta name="keywords" content="云订单,前后端一体化，拆单软件，定制家具生产">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>三维家云订单系统实现定制家具前后端一体化拆单生产</title>
-    <link rel="icon" type="img/x-ico" href="jsp/favicon.ico">
-    <link rel="stylesheet" href="css/cloudOrder.css">
+    <title>家具通云订单系统实现定制家具</title>
+    <link rel="icon" type="img/x-ico" href="${ctx}/jsp/favicon.ico">
+    <link rel="stylesheet" href="${ctx}/css/cloudOrder.css">
+<%--    <link rel="stylesheet" href="${ctx}/css/indet/Common.css">--%>
+    <script src="${ctx}/js/indent/BackToTop.js"></script>
     <style>
         .wildui-headerNav{background-color:#eee;}
         .nav-content{height:30px;line-height:30px;}
-        .mall-header{height:80px;line-height:80px;}
+        .mall-header{padding-left: 80px;line-height:80px;}
         .mall-menu .menu-sort>a{color:#fff;font-size:14px;font-weight:bold;}
         .mall-menu .menu-sort>ul{width:90px;position:absolute;top:40px;left:0;text-align:center;display:none;background-color: #fff;z-index:999;}
         .mall-menu .menu-sort>ul li,.mall-menu .menu-sort>ul li a{height:30px;line-height:30px;display:block;}
@@ -29,200 +32,64 @@
         <!-- 顶部导航区域 -->
         <div class="wildui-headerNav">
             <div class="wildui-main nav-content">
-                <a href="https://www.3vjia.com">三维家首页</a>
+                <a href="https://www.3vjia.com" style="padding-left: 100px;">家具通首页</a>
             </div>
         </div>
         <!-- 头部搜索区域 Start-->
         <div class="mall-header wildui-marT20 wildui-marB20 wildui-textCenter">
             <div class="wildui-main wildui-overhi">
-                <div class="wildui-fl wildui-header-headerLogo">
-                    <img src="//ydd.3vjia.com/Content/Images/logo_order.png?v=swj_V1.19.6.2" />
-                    <span class="wildui-fs18 wildui-text-blue wildui-marL5 wildui-lineBlock">云订单</span>
-                </div>
-
-                <div class="wildui-fr">
-                    <a href="/Account/Login" class="wildui-btn wildui-btn-middle wildui-bg-blue wildui-text-white">登录</a>
+                <div class="wildui-fl wildui-header-headerLogo" >
+                    <img src="${ctx}/images/log2.jpg" />
+<%--                    <font face="立体" color="black" style="font-size: 25px;"></font>--%>
+                    <span style="color: black;line-height: 88px;font-size: 20px">Furniture through cloud intelligent design/disassembly system</span>
+                    <button style="float: right;margin-top: 25px;margin-right: 100px;" id="login" class="layui-btn layui-btn-normal"> <a href="/home/producerLogin" class="wildui-btn wildui-btn-middle wildui-bg-blue wildui-text-white">登录</a></button>
                 </div>
             </div>
         </div>
         <!-- 头部搜索区域 End-->
     </div>
-
-
-
     <div class="cloudOrder__banner box">
         <div class="banner__intro box__wrap">
-            <p class="banner__title">三维家<span class="banner__title--text">云订单</span>生产系统</p>
-            <p class="banner__text">信息化驱动大规模生产</p>
+            <p class="banner__title">家具通<span class="banner__title--text">云端</span>智能设计/拆单系统</p>
+            <strong><p class="banner__text" style="margin-top: 56px;"></p></strong>
             <span id="ydd_btn__join_advisory_1" class="free_try JS-register" onclick="SetEventClick('云订单', '头部-加盟咨询'); advisoryOptionSelected(1);">加盟咨询</span>
             <span id="ydd_btn__free_try_1" class="free_try JS-register" onclick="SetEventClick('云订单', '头部-申请试用'); advisoryOptionSelected(2);">申请试用</span>
 
-            <p class="join__contact">
-                <span class="join__contact--title">专家热线</span><span class="join__contact--text">巩经理：<span class="join__contact--orange">15322261447</span> / 黄经理：‬</span>‭<span class="join__contact--orange">13143396331</span>
+            <p class="join__contact" style="margin-top: 60px;">
+                <span class="join__contact--title">专家热线</span><span class="join__contact--text"><span class="join__contact--orange">400-000-0000</span></span>‭
             </p>
         </div>
     </div>
     <div class="cloudeOrder__hard box">
         <div class="hard__bd box__wrap">
-            <p class="hard__text">定制家具生产行业的业务困境</p>
+            <p class="hard__text">创新引领行业未来</p>
             <div class="hard__wrap">
-                <span class="hard__img1"><img alt="定制家具生产" src="../Assets/Image/cloudOrder/hard_img1.png"></span>
+                <span class="hard__img1"><img alt="定制家具生产" src="${ctx}/images/CenterTop.jpg"></span>
                 <ul class="hard__list">
                     <li class="hard__item">
-                        <p class="hard__info"><span class="hard__number">1</span>从设计方案到生产，工艺不规范，人工计算，出差率高；</p>
+                        <p class="hard__info" style="font-size: 21px"><span class="hard__number">1</span>
+                        简洁、大方、无需设计、无需拆单、我们准备了海量数据库、一键生成设计图纸、<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;一键生成NC文件；
+                        </p>
                     </li>
                     <li class="hard__item add__left">
-                        <p class="hard__info"><span class="hard__number">2</span>设备利用率低，板材利用率低，浪费严重；</p>
+                        <p class="hard__info" style="font-size: 21px"><span class="hard__number">2</span>
+                            数据库后台每天实时更新、确保用户第一时间可获得市面主流产品；
+                        </p>
                     </li>
                     <li class="hard__item add__left">
-                        <p class="hard__info"><span class="hard__number">3</span>加工生产流程对技术工人依赖度高，人工成本高；</p>
+                        <p class="hard__info" style="font-size: 21px"><span class="hard__number">3</span>
+                            软件比传统软件功能增加了50%、优化了传统拆单软件多余的功能；
+                        </p>
                     </li>
                     <li class="hard__item">
-                        <p class="hard__info"><span class="hard__number">4</span>处理订单过程中，缺件、漏件、错件发生率高。</p>
+                        <p class="hard__info" style="font-size: 21px"><span style="font-size: 10px" class="hard__number">4</span>
+                        软件完美兼容1010、海迅、酷家乐、云熙等市面上主流的设计拆单软件。
+                        </p>
                     </li>
-                </ul><span class="hard_img2"><img src="../Assets/Image/cloudOrder/hard_img2.png" alt="定制家具生产"></span>
+                </ul><span class="hard_img2">
+                <img src="https://ydd.3vjia.com/Assets/Image/cloudOrder/hard_img2.png" STYLE="margin-left: 60px;margin-bottom: 50px;" alt="定制家具生产">
+            </span>
             </div>
-        </div>
-    </div>
-    <div class="house__solution box">
-        <div class="solution__bd box__wrap">
-            <p class="solution__text">
-                <i></i><span class="solution__text--title">定制家具生产行业</span><i></i>
-            </p>
-            <h2 class="solution__title">如何通过三维家云订单生产系统解决业务困境?</h2>
-        </div>
-    </div>
-    <div class="cloud__advantage box">
-        <div class="advantage__wrap box__wrap">
-            <h2 class="box__title">前后端一体化无缝对接</h2>
-            <p class="box__text">简单易上手 ，高效多产，效率提升10倍</p>
-            <ul class="advantage__list box__list">
-                <li class="advantage__item box__item">
-                    <div class="item__intro">
-                        <p class="intro__number">1</p>
-                        <h2 class="intro__title">一键精准快速拆单</h2>
-                        <p class="intro__text">无需CAD文件，方案图直接拆单生产，自动工艺规范解析、一键导出生产数据。</p>
-                    </div>
-                    <div class="item__img">
-                        <img alt="一键精准快速拆单" src="../Assets/Image/cloudOrder/main__txtbox_first.gif">
-                    </div>
-                </li>
-                <li class="advantage__item box__item">
-                    <div class="item__img">
-                        <img alt="智能优化排产" src="../Assets/Image/cloudOrder/main__txtbox_second.gif">
-                    </div>
-                    <div class="item__intro">
-                        <p class="intro__number">2</p>
-                        <h2 class="intro__title">智能优化排产</h2>
-                        <p class="intro__text">多订单混合排产，规划开料最优方案；板材开料利用率高达95%，为企业省时省料。</p>
-                    </div>
-                </li>
-                <li class="advantage__item box__item">
-                    <div class="item__intro">
-                        <p class="intro__number">3</p>
-                        <h2 class="intro__title">无缝对接生产设备</h2>
-                        <p class="intro__text">三维家自主研发，一键输出NC加工文件，无缝对接各类数控设备，自动核算材料成本。</p>
-                    </div>
-                    <div class="item__img">
-                        <img alt="无缝对接家具生产设备" src="../Assets/Image/cloudOrder/main__txtbox_third.gif">
-                    </div>
-                </li>
-                <li class="advantage__item box__item">
-                    <div class="item__img">
-                        <img alt="MPM条码管控实时跟踪" src="../Assets/Image/cloudOrder/main__txtbox_fourth.gif">
-                    </div>
-                    <div class="item__intro">
-                        <p class="intro__number">4</p>
-                        <h2 class="intro__title">MPM条码管控实时跟踪</h2>
-                        <p class="intro__text">一个条形码贯穿整个生产流程含开料、生产、安装、打包、仓储管理，让门店实时了解订单状态，最大降低板件遗漏率。</p>
-                    </div>
-                </li>
-            </ul>
-            <br /><br />
-            <span id="ydd_btn__join_advisory_2" class="free_try JS-register" onclick="SetEventClick('云订单', '头部-加盟咨询'); advisoryOptionSelected(1);">加盟咨询</span>
-            <span id="ydd_btn__free_try_2" class="free_try JS-register" onclick="SetEventClick('云订单', '头部-申请试用'); advisoryOptionSelected(2);">申请试用</span>
-        </div>
-    </div>
-    <div class="cloud__order box">
-        <div class="order__wrap box__wrap">
-            <h2 class="box__title order__title">一键下单拆单<span class="order__title--light">亮点功能</span></h2>
-            <p class="box__text order__text">数据一体化</p>
-            <ul class="order__list box__list">
-                <li class="order__item box__item">
-                    <div class="order__img order__img1"></div>
-                    <p class="order__item--title">一个数据源</p>
-                    <p class="order__item--text">门店设计到工厂拆单生产设计方案就是拆单方案只需一个库，无需二次画图</p>
-                </li>
-                <li class="order__item box__item">
-                    <div class="order__img order__img2"></div>
-                    <p class="order__item--title">一键下单</p>
-                    <p class="order__item--text">设计文件一键下单，自动提取客户、订单、材料等信息、避免下单出错</p>
-                </li>
-                <li class="order__item box__item">
-                    <div class="order__img order__img3"></div>
-                    <p class="order__item--title">一键纠错</p>
-                    <p class="order__item--text">参数化尺寸任意调整，切角转角智能避让，自动一键纠错</p>
-                </li>
-                <li class="order__item box__item">
-                    <div class="order__img order__img4"></div>
-                    <p class="order__item--title">一键工艺检查</p>
-                    <p class="order__item--text">系统还原验证生产数据，智能检测柜体工艺结构，设计不出错，拆单效率高</p>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <div class="house__benefit library__copy">
-        <div class="benefit__wrap copy__wrap">
-            <h2 class="benefit__title">种子库复制</h2>
-            <p class="benefit__text">快速建产品库</p>
-            <ul class="benefit__list copy__list">
-                <li class="benefit__item copy__item">
-                    <div class="benefit__img copy__img">
-                        <img alt="门板款式任意使用" src="../Assets/Image/cloudOrder/material1.png">
-                    </div>
-                    <p class="benefit__item--title">门板库</p>
-                    <p class="benefit__item--text">海量最新门板款式任意使用</p>
-                </li>
-                <li class="benefit__item copy__item">
-                    <div class="benefit__img copy__img">
-                        <img alt="五金配件一键调用" src="../Assets/Image/cloudOrder/material2.png">
-                    </div>
-                    <p class="benefit__item--title">五金库</p>
-                    <p class="benefit__item--text">多品牌完善的五金一键调用</p>
-                </li>
-                <li class="benefit__item copy__item">
-                    <div class="benefit__img copy__img">
-                        <img alt="家具组合款式一键调用" src="../Assets/Image/cloudOrder/material3.png">
-                    </div>
-                    <p class="benefit__item--title">组合库</p>
-                    <p class="benefit__item--text">海量组合款式一键调用</p>
-                </li>
-                <li class="benefit__item copy__item">
-                    <div class="benefit__img copy__img">
-                        <img alt="自由组合部件尺寸参数" src="../Assets/Image/cloudOrder/material4.png">
-                    </div>
-                    <p class="benefit__item--title">部件库</p>
-                    <p class="benefit__item--text">尺寸参数公式化设定自由组合</p>
-                </li>
-                <li class="benefit__item copy__item">
-                    <div class="benefit__img copy__img">
-                        <img alt="各板材厂材料信息可使用" src="../Assets/Image/cloudOrder/material5.png">
-                    </div>
-                    <p class="benefit__item--title">原材料库</p>
-                    <p class="benefit__item--text">各大板材厂材料信息可供使用</p>
-                </li>
-                <li class="benefit__item copy__item">
-                    <div class="benefit__img copy__img">
-                        <img alt="柜体结构灵活符合规范" src="../Assets/Image/cloudOrder/material6.png">
-                    </div>
-                    <p class="benefit__item--title">柜体库</p>
-                    <p class="benefit__item--text">柜体结构灵活企业规范完美融入</p>
-                </li>
-            </ul>
-            <br />
-            <span id="ydd_btn__join_advisory_3" class="free_try JS-register" onclick="SetEventClick('云订单', '头部-加盟咨询'); advisoryOptionSelected(1);">加盟咨询</span>
-            <span id="ydd_btn__free_try_3" class="free_try JS-register" onclick="SetEventClick('云订单', '头部-申请试用'); advisoryOptionSelected(2);">申请试用</span>
-            <span class="copy_img1"><img src="../Assets/Image/cloudOrder/copy_img1.png"></span><span class="copy_img2"><img src="../Assets/Image/cloudOrder/copy_img2.png"></span>
         </div>
     </div>
     <div class="cloud__firm box">
@@ -240,84 +107,10 @@
             </ul>
         </div>
     </div>
-    <div class="core box">
-        <div class="core__wrap box__wrap">
-            <h2 class="core__title box__title">三维家，以用户为中心</h2>
-            <p class="core__text box__text">用心打造完善、强大的服务体系</p>
-            <ul class="core__list box__list">
-                <li class="core__item box__item">
-                    <div class="core__img core__img1"></div>
-                    <p class="core__item--text">软件视频、图文教程免费在线观看学习</p>
-                </li>
-                <li class="core__item box__item">
-                    <div class="core__img core__img2"></div>
-                    <p class="core__item--text">海量素材定期更新，免费下载和使用</p>
-                </li>
-                <li class="core__item box__item">
-                    <div class="core__img core__img3"></div>
-                    <p class="core__item--text">服务热线、网络客服多渠道及时解答用户疑问</p>
-                </li>
-                <li class="core__item box__item">
-                    <div class="core__img core__img4"></div>
-                    <p class="core__item--text">线上线下培训，确保零基础用户快速上手</p>
-                </li>
-            </ul>
-            <br /><br />
-            <span id="ydd_btn__join_advisory_4" class="free_try JS-register" onclick="SetEventClick('云订单', '头部-加盟咨询'); advisoryOptionSelected(1);">加盟咨询</span>
-            <span id="ydd_btn__free_try_4" class="free_try JS-register" onclick="SetEventClick('云订单', '头部-申请试用'); advisoryOptionSelected(2);">申请试用</span>
-        </div>
-    </div>
-    <div class="cooperation box">
-        <div class="cooperation__info box__wrap">
-            <h2 class="box__title cooperation__title">合作品牌</h2>
-            <p class="box__text cooperation__text">助力合作伙伴提供智慧解决方案，携手共建双赢</p>
-            <div class="cooperation__banner"></div>
-        </div>
-    </div>
-    <div class="join">
-        <div class="join__intro">
-            <h2 class="join__title">加入我们，与5000+企业一起改变</h2>
-            <br /><br />
-            <span id="ydd_btn__join_advisory_5" class="free_try JS-register" onclick="SetEventClick('云订单', '头部-加盟咨询'); advisoryOptionSelected(1);">加盟咨询</span>
-            <span id="ydd_btn__free_try_5" class="free_try JS-register" onclick="SetEventClick('云订单', '头部-申请试用'); advisoryOptionSelected(2);">申请试用</span>
-
-            <p class="join__contact">
-                <span class="join__contact--title">专家热线</span><span class="join__contact--text">巩经理：<span class="join__contact--orange">15322261447</span> / 黄经理：‬</span>‭<span class="join__contact--orange">13143396331</span>
-            </p>
-        </div>
-    </div>
-    <div class="footer">
-        <div class="footer__product">
-            <div class="footer__inner">
-
-
-                <div class="footer__ft">
-                    <div class="footer__infowrap">
-                        <p class="footer__copyright">Copyright © 2012-2018 广东三维家信息科技有限公司 版权所有.</p>
-                        <p class="footer__police">
-                            <i class="f-police__img"></i>  <a rel="nofollow" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44010602002700" target="_blank">粤公网安备 44010602002700号</a>     <a target="_blank" rel="nofollow" href="http://www.miitbeian.gov.cn">粤ICP备14070053号</a>
-                        </p>
-                    </div>
-                    <ul class="footer__safeWrap">
-                        <li class="footer__safeWrap--list">
-                            <a target="_blank" href="https://v.pinpaibao.com.cn/authenticate/cert/?site=www.3vjia.com&at=business"><i class="footer__safeWrap--img1"></i></a>
-                        </li>
-                        <li class="footer__safeWrap--list">
-                            <a target="_blank" href="http://si.trustutn.org/info?sn=468170713029378551603&certType=1"><i class="footer__safeWrap--img2"></i></a>
-                        </li>
-                        <li class="footer__safeWrap--list">
-                            <a target="_blank" href="http://www.gzjd.gov.cn/"><i class="footer__safeWrap--img3"></i></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
+                    <div style="width: 100%;height: 50px;line-height: 50px;text-align: center;font-size: 14px;color: #999;background: black">©2012～2019 All rights reserved齐能信息科技有限公司 版权所有鄂ICP备14070053号-2</div>
     <div class="window">
         <div class="window__nav">
-
             <div class="nav__item--box">
-
                 <div id="btnRegister0" class="r-nav__item hover__item register__item js-register__ctrl" resource="BCP_Cabinet">
                     <div class="r-nav__icon window__nav-register"></div>
                     <div id="ydd_btn__register" class="r-nav__name">登记</div>
@@ -330,8 +123,8 @@
                             <div class="content__item">
 
                                 <div class="content__text">
-                                    <p class="content__title consult-number">至造云订单</p>
-                                    <p class="content__title">至爱智家（三维家全资子公司）旗下的智慧生产系统。</p>
+                                   <%-- <p class="content__title consult-number">至造云订单</p>
+                                    <p class="content__title">至爱智家（三维家全资子公司）旗下的智慧生产系统。</p>--%>
                                     <img src="/Assets/Image/qrcode_for_gh_5a3379c4462d_258.jpg" />
                                 </div>
                             </div>
@@ -339,11 +132,15 @@
                         </div>
                     </div>
                 </div>
+               <%-- <div id="btnRegister0" class="r-nav__item hover__item register__item js-register__ctrl" resource="BCP_Cabinet">
+                    <div class="r-nav__icon window__nav-register"></div>
+                    <div id="ydd_btn__register" class="r-nav__name">回到顶部</div>
+                </div>--%>
             </div>
-            <div class="r-nav__top hover__item js-top" style="transform: translate(0px, 0px); transition: transform 0.5s ease-in-out 0s;">
+           <%-- <div class="r-nav__top hover__item js-top" style="transform: translate(0px, 0px); transition: transform 0.5s ease-in-out 0s;">
                 <div class="r-nav__icon window__nav-top"></div>
-                <div class="r-nav__name">回顶部</div>
-            </div>
+               &lt;%&ndash; <div class="r-nav__name">回顶部</div>&ndash;%&gt;
+            </div>--%>
         </div>
     </div>
     <div class="register">
@@ -407,5 +204,6 @@
     <input id="hid_Right" type="hidden" value="//www.3vjia.com/home/CreateGuestAppointment">
     <input type="hidden" value="BCP_Right" id="hid_IntentionRegister">
 </div>
+<script type="text/JavaScript" src="//ydd.3vjia.com/Scripts/page/ShoppingMall/MallCommon.js?v=swj_V1.19.6.2"></script>
 </body>
 </html>

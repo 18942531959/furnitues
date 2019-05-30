@@ -8,8 +8,7 @@ body {
     padding: 0;
     background: #f2f2f2;
     color: #fff;
-    font-family: pingfang-sc, "Microsoft YaHei", Verdana, Arial, sans-serif,
-    "aahhhh";
+    font-family:"Microsoft YaHei","simsun","Helvetica Neue", Arial, Helvetica, sans-serif;
 }
 main {
     display: block;
@@ -467,19 +466,19 @@ template {
     -ms-transform: scale(1);
     transform: scale(1);
 }
-.img__icon-collected,
+/*.img__icon-collected,
 .img__icon-company,
 .img__icon-design,
 .img__icon-exit,
 .img__icon-mycenter,
 .img__icon-post,
 .img__icon-set {
-    background: url(../Image/common-icons.png) no-repeat;
+    background: url(../images/logTop.jpg) no-repeat;
     display: inline-block;
     vertical-align: -4px;
     margin-right: 18px;
     cursor: pointer;
-}
+}*/
 .img__icon-design {
     background-position: -57px -67px;
     width: 16px;
@@ -522,15 +521,15 @@ template {
 .header__notice {
     position: relative;
 }
-.header__icon--notice {
-    background: url(../Image/common-icons.png) no-repeat -22px -67px;
+/*.header__icon--notice {
+    background: url(../images/logTop.jpg) no-repeat -22px -67px;
     width: 18px;
     height: 20px;
     display: inline-block;
     vertical-align: -4px;
     cursor: pointer;
     position: relative;
-}
+}*/
 .header__notice:hover .nav__dropdown {
     -webkit-transform: scale(1);
     -ms-transform: scale(1);
@@ -878,19 +877,19 @@ template {
     font-size: 20px;
     color: #c3c3c3;
 }
-.carousel__panorama i {
+/*.carousel__panorama i {
     display: inline-block;
     width: 22px;
     height: 22px;
     line-height: 22px;
-    background: url(../Image/house-customization/icon_sprites.png);
+    background: url(../images/logTop.jpg);
     background-position: -202px -138px;
     vertical-align: middle;
-}
+}*/
 .carousel__panorama span {
     vertical-align: middle;
 }
-.prev__btn {
+/*.prev__btn {
     position: absolute;
     z-index: 11;
     width: 44px;
@@ -903,11 +902,11 @@ template {
     color: #000;
     background: url(../Image/house-customization/icon_sprites.png);
     background-position: -74px -10px;
-}
+}*/
 .prev__btn:hover {
     background-position: -10px -10px;
 }
-.next__btn {
+/*.next__btn {
     position: absolute;
     z-index: 11;
     width: 44px;
@@ -920,7 +919,7 @@ template {
     color: #000;
     background: url(../Image/house-customization/icon_sprites.png);
     background-position: -138px -10px;
-}
+}*/
 .next__btn:hover {
     background-position: -10px -100px;
 }
@@ -965,18 +964,18 @@ template {
     font-size: 16px;
     color: #666;
 }
-.cooperation__banner {
+/*.cooperation__banner {
     margin-top: 80px;
     width: 100%;
     height: 280px;
     background: url(../Image/cooperation.png) no-repeat;
-}
-.join {
+}*/
+/*.join {
     width: 100%;
     height: 320px;
     color: #fff;
     background: url(../Image/cloudOrder/join-banner.png) no-repeat;
-}
+}*/
 .join__intro {
     padding-top: 40px;
     text-align: center;
@@ -1014,7 +1013,7 @@ template {
     color: rgba(255, 255, 255, 0.8);
 }
 .join__contact--orange {
-    color: #ff9e00;
+    color: whitesmoke;
 }
 .footer {
     width: 100%;
@@ -1023,9 +1022,9 @@ template {
     width: 100%;
     background: #292c2f;
 }
-.footer__product i {
+/*.footer__product i {
     background: url(../Image/production.png) no-repeat;
-}
+}*/
 .footer__inner {
     width: 1180px;
     margin: 0 auto;
@@ -1139,7 +1138,7 @@ template {
 .footer__partner--list a {
     color: rgba(255, 255, 255, 0.6);
 }
-.f-bd__more {
+/*.f-bd__more {
     float: right;
     width: 18px;
     height: 18px;
@@ -1149,7 +1148,7 @@ template {
     -webkit-transform: scale(0.7);
     -ms-transform: scale(0.7);
     transform: scale(0.7);
-}
+}*/
 .link-open-seleted {
     background-position: -197px -21px;
 }
@@ -1192,6 +1191,7 @@ template {
 }
 .footer__copyright {
     line-height: 26px;
+    padding-left: 50px;
 }
 .footer__police {
     line-height: 26px;
@@ -1270,10 +1270,10 @@ template {
     cursor: pointer;
     font-size: 24px;
 }
-.register__header {
+/*.register__header {
     height: 140px;
     background: url(../Image/rightSide/background.png) no-repeat;
-}
+}*/
 .register__title {
     font-size: 22px;
     margin-bottom: 16px;
@@ -1361,7 +1361,7 @@ template {
 .select__value input {
     cursor: pointer;
 }
-.select__icon {
+/*.select__icon {
     position: absolute;
     top: 5px;
     right: 5px;
@@ -1371,11 +1371,11 @@ template {
     background: url(../Image/rightSide/rightSide_sprites.png) no-repeat;
     background-position: -10px -10px;
     cursor: pointer;
-}
-.arrow__up {
+}*/
+/*.arrow__up {
     background: url(../Image/rightSide/rightSide_sprites.png) no-repeat;
     background-position: -60px -10px;
-}
+}*/
 .register__content .register__form .input__vcode {
     position: relative;
 }
@@ -1467,12 +1467,12 @@ template {
     font-size: 24px;
     color: #666;
 }
-.register-success__pic {
+/*.register-success__pic {
     width: 60px;
     height: 60px;
     margin: 0 auto;
     background: url(../Image/rightSide/success.png) no-repeat;
-}
+}*/
 .register-success__title {
     font-size: 18px;
     color: #333;
@@ -1562,12 +1562,16 @@ template {
     padding: 8px 0;
     cursor: pointer;
 }
+/*
+右侧图片
+
+*/
 .r-nav__icon {
     margin: 0 auto;
     width: 24px;
     height: 24px;
     margin-bottom: 3px;
-    background: url(../Image/rightSide/rightSide_sprites.png) no-repeat;
+    background: url(https://ydd.3vjia.com/Assets/Image/rightSide/rightSide_sprites.png) no-repeat;
 }
 .window__nav-consult {
     background-position: -126px -112px;
@@ -1642,14 +1646,14 @@ template {
 .window .content__item:hover .hover__title {
     color: #178fff;
 }
-.content__icon {
+/*.content__icon {
     display: inline-block;
     width: 24px;
     height: 24px;
     margin-right: 16px;
     margin-bottom: 4px;
     background: url(../Image/rightSide/rightSide_sprites.png) no-repeat;
-}
+}*/
 .window__content-consult {
     background-position: -150px -107px;
 }
@@ -1707,12 +1711,12 @@ template {
     line-height: 1;
     text-align: center;
 }
-.register__icon {
+/*.register__icon {
     display: inline-block;
     width: 46px;
     height: 45px;
     background: url(../Image/package.png) no-repeat;
-}
+}*/
 .register__text {
     position: relative;
     top: -18px;
@@ -1790,12 +1794,12 @@ template {
 .core__item:last-child {
     margin-right: 0;
 }
-.core__img {
+/*.core__img {
     margin: 0 auto;
     width: 54px;
     height: 54px;
     background: url(../Image/cloudOrder/css_sprites.png) no-repeat;
-}
+}*/
 .core__img1 {
     background-position: -535px -10px;
 }
@@ -1891,12 +1895,12 @@ template {
     color: #fff;
     opacity: 1;
 }
-.nav__img {
+/*.nav__img {
     margin: auto;
     width: 40px;
     height: 40px;
     background: url(../Image/nav-sprites.png) no-repeat;
-}
+}*/
 .nav__img1 {
     background-position: -10px -10px;
 }
@@ -2124,7 +2128,7 @@ h6 {
 .buy_server:hover {
     background: #097cf0;
 }
-@font-face {
+/*@font-face {
     font-family: icomoon;
     src: url(../font/icomoon.eot?ds74ub);
     src: url(../font/icomoon.eot?ds74ub#iefix) format("embedded-opentype"),
@@ -2133,7 +2137,7 @@ h6 {
     url(../font/icomoon.svg?ds74ub#icomoon) format("svg");
     font-weight: 400;
     font-style: normal;
-}
+}*/
 [class*=" icon-"],
 [class^="icon-"] {
     font-family: icomoon !important;
@@ -2174,10 +2178,13 @@ h6 {
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
+/*
+最上面的图片
+*/
 .cloudOrder__banner {
     padding-top: 118px;
-    height: 480px;
-    background: url(../Image/cloudOrder/cloudOrder_banner.png) no-repeat;
+    height: auto;
+    background: url(../images/logCenter.jpg) no-repeat;
 }
 .banner__text {
     margin-bottom: 50px;
@@ -2202,9 +2209,12 @@ h6 {
 .banner__number {
     color: #3499ff;
 }
+/*
+中间图片
+*/
 .cloudeOrder__hard {
     height: 580px;
-    background: url(../Image/cloudOrder/hard_banner.png) no-repeat;
+    /*background: url(../images/logTop.jpg) no-repeat;*/
 }
 .hard__text {
     margin-bottom: 24px;
@@ -2220,12 +2230,13 @@ h6 {
     margin: 0 auto;
     width: 100%;
     height: 100%;
+    font-size: 20px;
 }
 .hard__img1 {
     position: absolute;
     display: inline-block;
     top: 0;
-    left: 100px;
+    left: -100px;
     vertical-align: top;
     width: 352px;
     height: 353px;
@@ -2249,7 +2260,7 @@ h6 {
     margin-bottom: 42px;
     margin-left: 134px;
     text-align: left;
-    font-size: 16px;
+    font-size: 190px;
     color: #000;
 }
 .add__left {
@@ -2279,12 +2290,12 @@ h6 {
     right: 0;
     width: 240px;
 }
-.house__solution {
+/*.house__solution {
     position: relative;
     padding-top: 66px;
     height: 260px;
-    background: url(../Image/solve-banner.png) no-repeat;
-}
+    background: url(../images/imagelog.jpg) no-repeat;
+}*/
 .solution__text {
     font-size: 28px;
 }
@@ -2465,11 +2476,11 @@ h6 {
 .copy_img2 {
     right: -144px;
 }
-.cloud__order {
+/*.cloud__order {
     width: 100%;
     height: 666px;
-    background: url(../Image/cloudOrder/order_banner.png);
-}
+    background: url(../images/logTop.jpg);
+}*/
 .order__title {
     color: #000;
 }
@@ -2523,12 +2534,12 @@ h6 {
     vertical-align: top;
     text-align: center;
 }
-.order__img {
+/*.order__img {
     margin: 0 auto;
     width: 54px;
     height: 54px;
-    background: url(../Image/cloudOrder/css_sprites.png);
-}
+    background: url(../images/logTop.jpg);
+}*/
 .order__img1 {
     background-position: -360px -434px;
 }
@@ -2557,9 +2568,12 @@ h6 {
     color: rgba(0, 0, 0, 0.5);
     text-align: left;
 }
+/*
+底部图片
+*/
 .cloud__firm {
     height: 610px;
-    background: url(../Image/cloudOrder/firm_banner.png);
+    background: url(../images/logBottom.jpg);
 }
 .firm__wrap {
     padding: 0 124px;
@@ -2571,12 +2585,15 @@ h6 {
     margin-top: 56px;
     margin-right: 0;
 }
+/*
+合作方图片
+*/
 .firm__item {
     margin-right: 40px;
     margin-bottom: 40px;
     width: 155px;
     height: 155px;
-    background: url(../Image/cloudOrder/css_sprites.png) no-repeat;
+    background: url(https://ydd.3vjia.com/Assets/Image/cloudOrder/css_sprites.png) no-repeat;
 }
 .firm__item1 {
     background-position: -10px -10px;
