@@ -34,7 +34,7 @@
         <slf4j.version>1.7.7</slf4j.version>
         <log4j2.disruptor.version>3.2.0</log4j2.disruptor.version>
     <!--5.其他-->
-        <junit.version>4.12</junit.version>
+        <junit.version>4.13.1</junit.version>
         <servlet.version>4.0.0</servlet.version>
         <lombok.version>1.18.2</lombok.version>
     <!--jackson -->
