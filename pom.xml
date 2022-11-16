@@ -38,7 +38,7 @@
         <servlet.version>4.0.0</servlet.version>
         <lombok.version>1.18.2</lombok.version>
     <!--jackson -->
-        <jackson.version>2.9.3</jackson.version>
+        <jackson.version>2.12.7.1</jackson.version>
 
     <!--6.ehcache-->
         <ehcache.version>2.10.0</ehcache.version>
